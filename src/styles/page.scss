@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'TRYGrtsk';
+  src: 
+    url('../assets/fonts/TRYGrtsk-Medium.woff') format('woff'),
+    url('../assets/fonts/TRYGrtsk-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TRYGrtsk';
+  src: 
+    url('../assets/fonts/TRYGrtsk-Regular.woff') format('woff'),
+    url('../assets/fonts/TRYGrtsk-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TRYGrtsk';
+  src: 
+    url('../assets/fonts/TRYGrtsk-SemiBold.woff') format('woff'),
+    url('../assets/fonts/TRYGrtsk-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.page {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  min-width: 320px;
+  background-color: #ECECEC;
+  font-family: 'TRYGrtsk', Arial, sans-serif;
+  font-weight: 500;
+
+}
