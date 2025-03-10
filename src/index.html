@@ -7,44 +7,56 @@
 </head>
 <body class="page">
   <header class="header">
-    <img src="<%=require('./assets/images/logo.svg')%>" alt="" class="header-logo">
-    <div class="header__menu">
-      <nav class="menu">
-        <ul class="menu__list">
-          <li class="menu__item">
-            SM Awards
-          </li>
-          <li class="menu__item">
-            Проекты
-          </li>
-          <li class="menu__item">
-            <a href="">
-              SM Conference
-            </a>
-          </li>
-          <li class="menu__item">
-            <a href="">
-              О Silver Mercury
-            </a>
-          </li>
-          <li class="menu__item">
-            Пресс-центр
-          </li>
-          <li class="menu__item">
-            <a href="">
-              Контакты
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div>
-  
+    <a href="" class="header__logo-link">
+      <img src="<%=require('./assets/images/logo.svg')%>" alt="" class="header__logo-icon">
+    </a>
+    <div class="header__menu menu">
+      <ul class="menu__list">
+        <li class="menu__item">
+          SM Awards
+          <img src="<%=require('./assets/images/arrow-menu.svg')%>" alt="" class="menu__item-arrow">
+        </li>
+        <li class="menu__item">
+          Проекты
+          <img src="<%=require('./assets/images/arrow-menu.svg')%>" alt="" class="menu__item-arrow">
+        </li>
+        <li class="menu__item">
+          <a href="">
+            SM Conference
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="">
+            О Silver Mercury
+          </a>
+        </li>
+        <li class="menu__item">
+          Пресс-центр
+          <img src="<%=require('./assets/images/arrow-menu.svg')%>" alt="" class="menu__item-arrow">
+        </li>
+        <li class="menu__item">
+          <a href="">
+            Контакты
+          </a>
+        </li>
+      </ul>
+
+      <div class="language">
+        <a href="" class="language__item language__item_ru active">Ru</a>
+        <a href="" class="language__item language__item_en">En</a>
       </div>
 
+      
+
     </div>
-    <div class="">
-      <img src="" alt="">
-      <img src="" alt="">
+    <div class="header__links">
+      <a class="header__link header__link_fav">
+        <img src="<%=require('./assets/images/header-fav-icon.png')%>" alt="" class="header__link-icon">
+      </a>
+      <a class="header__link header__link_lk">
+        <img src="<%=require('./assets/images/header-lk-icon.png')%>" alt="" class="header__link-icon">
+      </a>
+
     </div>
   </header>
 </body>

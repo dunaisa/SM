@@ -1,0 +1,45 @@
+@use '../variables';
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: variables.$base-font-size;
+}
+
+
+.page {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1440px;
+  min-width: 320px;
+  background-color: #ECECEC;
+  font-family: 'TRYGrtsk', Arial, sans-serif;
+  font-weight: 500;
+  color: variables.$text-color;
+
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  &__item {
+    color: variables.$block-color;
+    font-size: 1.8rem;
+    line-height: 100%;
+    text-decoration: none;
+    &.active {
+      color: variables.$text-color;
+    }
+  }
+}

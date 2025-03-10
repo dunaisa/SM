@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 1.2rem;
+  background-color: #FFFFFF;
+  &__menu {
+    max-width: 920px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 64px;
+  }
+  &__logo-link {
+    text-decoration: none;
+    margin: 3px 0 1px;
+  }
+
+  &__logo-icon {
+    width: 112px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-left: 103px;
+  }
+  &__link {
+    text-decoration: none;
+    width: 24px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  &__link-icon {
+    width: 100%;
+    object-fit: cover;
+  }
+}

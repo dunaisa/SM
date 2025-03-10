@@ -25,25 +25,3 @@
   font-style: normal;
   font-display: swap;
 }
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 10px;
-}
-
-.page {
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1440px;
-  min-width: 320px;
-  background-color: #ECECEC;
-  font-family: 'TRYGrtsk', Arial, sans-serif;
-  font-weight: 500;
-
-}
