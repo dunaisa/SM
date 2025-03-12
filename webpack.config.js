@@ -34,6 +34,7 @@ module.exports = {
       {
         // регулярное выражение, которое ищет все файлы с такими расширениями
         test: /\.(png|svg|jpg|gif)$/,
+        
         type: 'asset/resource',
         generator: {
           filename: 'assets/images/[name][ext]', // Для dev

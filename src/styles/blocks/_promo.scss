@@ -1,0 +1,42 @@
+@use '../variables';
+
+.promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: variables.$text-color;
+  height: calc(100vh - 45px);
+  padding: 1.2rem;
+  width: 100%;
+  &__title {
+    font-size: 13rem;
+    line-height: 80%;
+    color: variables.$base-white;
+    font-weight: 500;
+    letter-spacing: variables.$big-letter-spacing;
+    padding: 0;
+    margin: 0;
+  }
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 60vw;
+    width: 100%;
+  }
+  &__subtitle {
+    display: block;
+    max-width: 524px;
+    width: 100%;
+  }
+  &__subtitle,  
+  &__dec-icon {
+    font-size: 1.8rem;
+    line-height: 115%;
+    color: variables.$base-white;
+    font-weight: 500;
+    letter-spacing: variables.$small-letter-spacing;
+    margin: 0;
+    padding: 0;
+  }
+}

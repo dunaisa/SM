@@ -25,6 +25,9 @@ html {
   font-family: 'TRYGrtsk', Arial, sans-serif;
   font-weight: 500;
   color: variables.$text-color;
+  &__main {
+    width: 100%;
+  }
 
 }
 

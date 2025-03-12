@@ -1,0 +1,28 @@
+@use '../variables';
+
+.left-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: variables.$block-color;
+    &__title {
+      font-weight: 500;
+      font-size: 11rem;
+      line-height: 80%;
+      letter-spacing: variables.$big-letter-spacing;
+      margin: 0;
+      padding: 1.2rem;
+    }
+  &__description {
+    display: inline-block;
+    margin: 0;
+    padding: 1rem 1.2rem 1.4rem;
+    background-color: variables.$base-white;
+    font-size: 1.8rem;
+    line-height: 115%;
+    letter-spacing: variables.$small-letter-spacing;
+    font-weight: 400;
+    margin-top: auto;
+  }
+
+}
