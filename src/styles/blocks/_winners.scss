@@ -1,0 +1,13 @@
+.winners {
+  display: flex;
+  flex-direction: column;
+  padding: 8rem 0 8rem 1.2rem;
+  &__title {
+    margin-bottom: 2rem;
+    letter-spacing: -0.3rem;
+  }
+  &__cards-container {
+    width: 100%;
+    overflow: hidden;
+  }
+}

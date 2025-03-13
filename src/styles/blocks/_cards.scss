@@ -1,0 +1,136 @@
+@use '../variables';
+@use '../mixins';
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  &__wrapper {
+    display: flex;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    max-width: 416px;
+    &-wrapper {
+      width: 100%;
+    }
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    margin-right: 1.2rem;
+  }
+  &__btn {
+    outline: none;
+    background: transparent;
+    width: 24px;
+    border: none;
+    padding: 0;
+    margin: 0 16px 0 0;
+    cursor: pointer;
+    &-arrow {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__link {
+    font-size: 1.8rem;
+    line-height: 100%;
+    color: variables.$text-color;
+    letter-spacing: variables.$small-letter-spacing;
+    margin-left: auto;
+    text-align: left;
+    max-width: 150px;
+    width: 100%;
+    position: relative;
+    font-weight: 500;
+    @include mixins.hover-effect;
+    &::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      background-image: url(../assets/images/next-arrow.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+
+    }
+  }
+
+}
+
+.card {
+  position: relative;
+  &__category {
+    width: fit-content;
+    font-size: 1.4rem;
+    line-height: 100%;
+    color: variables.$base-white;
+    letter-spacing: variables.$small-letter-spacing;
+    background-color: variables.$text-color;
+    padding: 1px 3px;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 0 0 0 1.2rem;
+    border-left: 1px solid variables.$text-color;
+  }
+  &__name {
+    font-size: 2.6rem;
+    line-height: 108%;
+    color: variables.$text-color;
+    letter-spacing: -0.08rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+  }
+  &__lable {
+    font-size: 1.4rem;
+    line-height: 120%;
+    color: variables.$text-color;
+    letter-spacing: variables.$small-letter-spacing;
+    font-weight: 400;
+    margin: 0 0 0.4rem;
+    padding: 0;
+  }
+  &__type {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: fit-content;
+    font-size: 2rem;
+    line-height: 100%;
+    letter-spacing: variables.$small-letter-spacing;
+    padding: 0 0.4rem 0.4rem;
+    margin: 0;
+    font-weight: 500;
+    &_gold {
+      background-color: #FFF800;
+      color: variables.$text-color;
+    }
+    &_silver {
+      background-color: variables.$block-color;
+      color: variables.$text-color;
+    }
+    &_bronze {
+      background-color: #FF4E00;
+      color: variables.$base-white;
+
+    }
+  }
+}

@@ -12,6 +12,15 @@ html {
   font-size: variables.$base-font-size;
 }
 
+h3 {
+  font-family: 'TRYGrtsk', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 5.2rem;
+  line-height: 90%;
+  padding: 0;
+  margin: 0;
+  letter-spacing: variables.$big-letter-spacing;
+}
 
 .page {
   margin: 0 auto;
