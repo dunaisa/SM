@@ -1,0 +1,80 @@
+@use '../variables';
+
+.block {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  &__top {
+    height: 100%;
+    &_align {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-title {
+      font-size: 11rem;
+      line-height: 80%;
+      color: variables.$text-color;
+      font-weight: 500;
+      letter-spacing: -0.5rem;
+      margin: 0;
+      padding: 1.2rem;
+    }
+  }
+  &__bottom {
+    margin-top: auto;
+    &-title {
+      font-size: 5.2rem;
+      line-height: 90%;
+      color: variables.$text-color;
+      font-weight: 500;
+      letter-spacing: -0.2rem;
+      margin: 0;
+      padding: 0.8rem 1.2rem 1.2rem;
+      background-color: variables.$block-color;
+    }
+    &-desc {
+      font-size: 1.8rem;
+      line-height: 115%;
+      color: variables.$text-color;
+      font-weight: 400;
+      letter-spacing: -0.05rem;
+      margin: 0;
+      padding: 0.8rem 1.2rem 1.2rem;
+      background-color: variables.$base-white;
+    }
+  }
+  &_pixel {
+    // background: repeating-conic-gradient(#CECDCD 0% 25%, transparent 0% 50%);
+    // background-size: 20px 20px;
+  }
+  &_yellow {
+    background-color: #FFF800;
+  }
+  &_gray {
+    background-color: variables.$block-color;
+  }
+  &_carrot {
+    background-color: #FF4E00;
+  }
+  &_pink {
+    background-color: #F973FF;
+  }
+  &_blue {
+    background-color: #0000FF;
+  }
+  &_purple {
+    background-color: #8A64E8;
+  }
+}
+
+.pixel {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
