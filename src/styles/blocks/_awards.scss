@@ -116,19 +116,25 @@
     color: variables.$base-white;
     font-size: 8rem;
     line-height: 90%;
-    letter-spacing: variables.$big-letter-spacing;
+    padding: 0 6px;
+    &:nth-child(1) {
+      letter-spacing: -0.3rem;
+      transform: translateX(-25%);
+    }
     &:nth-child(2) {
-      letter-spacing: -0,0425rem;
+      letter-spacing: -0.4rem;
       line-height: 100%;
     }
     &:nth-child(3) {
+      letter-spacing: -0.3rem;
       line-height: 120%;
+      transform: translateX(-20%);
     }
     &-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.6rem;
 
     }
 
