@@ -1,0 +1,38 @@
+@use '../variables';
+@use '../mixins';
+
+.banner {
+  min-height: 320px;
+  @include mixins.grid-block;
+  a {
+    width: 100%;
+    &::after {
+      background-image: url(../assets/images/arrow-link.png);
+    }
+  }
+  &__left {
+    background-color: #FF4E00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__img {
+    max-width: 542px;
+    object-fit: cover;
+  }
+  &__right {
+    background-color: variables.$text-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__title {
+    font-size: 5.2rem;
+    padding: 0.8rem 1.2rem 1.2rem;
+    margin: 0;
+    font-weight: 500;
+    color: variables.$base-white;
+    letter-spacing: -0.1rem;
+
+  }
+}

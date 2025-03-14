@@ -2,10 +2,8 @@
 @use '../mixins';
 
 .awards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
   min-height: 580px;
+  @include mixins.grid-block;
   &__links {
     display: flex;
   }
