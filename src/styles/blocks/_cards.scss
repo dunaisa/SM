@@ -35,34 +35,9 @@
       object-fit: cover;
     }
   }
-  &__link {
-    font-size: 1.8rem;
-    line-height: 100%;
-    color: variables.$text-color;
-    letter-spacing: variables.$small-letter-spacing;
-    margin-left: auto;
-    text-align: left;
-    max-width: 150px;
-    width: 100%;
-    position: relative;
-    font-weight: 500;
-    @include mixins.hover-effect;
-    &::after {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 24px;
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translate(0, -50%);
-      background-image: url(../assets/images/next-arrow.png);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      background-position: center;
-
-    }
-  }
+  // &__link {
+    
+  // }
 
 }
 
