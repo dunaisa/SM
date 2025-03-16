@@ -78,6 +78,11 @@
     padding: 1px 3px;
     margin-bottom: 1.2rem;
     font-weight: 500;
+    &-wrapper {
+      display: flex;
+      gap: 1px;
+      align-items: center;
+    }
   }
   &__img {
     width: 100%;
@@ -98,6 +103,17 @@
     font-weight: 500;
     margin: 0;
     padding: 0;
+  }
+  &__date {
+    width: fit-content;
+    font-size: 1.4rem;
+    line-height: 100%;
+    color: variables.$text-color;
+    letter-spacing: variables.$small-letter-spacing;
+    background-color: variables.$base-white;
+    padding: 1px 3px;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
   }
   &__lable {
     font-size: 1.4rem;

@@ -2,6 +2,11 @@
 
 .cards-list {
   @include mixins.grid-block;
-  min-height: 538px;
-  
+  &_sheight {
+    min-height: 538px;
+  }
+  &_lheight {
+    min-height: 580px;
+  }
+
 }

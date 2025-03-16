@@ -114,11 +114,11 @@
 
     </section>
 
-    <section class="winners">
-      <h3 class="winners__title">
+    <section class="slider">
+      <h3 class="slider__title">
         Победители 2024
       </h3>
-      <div class="swiper winners__cards-container cards">
+      <div class="swiper slider__cards-container cards" id="winners-slider">
         <div class="swiper-wrapper cards__wrapper ">
           <div class="swiper-slide cards__item-wrapper">
             <a href="" target="_blank" class="cards__item card">
@@ -255,7 +255,7 @@
         </svg>
     </div>
 
-    <div class="cards-list">
+    <div class="cards-list cards-list_sheight">
       <a class="cards-list__block block block_pixel">
         <div class="block__top block__top_align">
           <img src="<%=require('./assets/images/retrograde.svg')%>" alt="">
@@ -305,7 +305,7 @@
         </svg>
     </div>
 
-    <div class="cards-list">
+    <div class="cards-list cards-list_lheight">
       <a class="cards-list__block block block_gray">
         <div class="block__top">
           <h2 class="block__top-title">
@@ -347,7 +347,7 @@
         </svg>
     </div>
 
-    <div class="cards-list">
+    <div class="cards-list cards-list_sheight">
       <a class="cards-list__block block block_pink">
         <div class="block__top block__top_align">
           <img src="<%=require('./assets/images/young.svg')%>" alt="">
@@ -396,7 +396,7 @@
         </svg>
     </div>
 
-    <div class="cards-list">
+    <div class="cards-list cards-list_lheight">
       <a class="cards-list__block block block_gray">
         <div class="block__top">
           <h2 class="block__top-title">
@@ -418,6 +418,135 @@
       </a>
 
     </div>
+
+    <section class="slider">
+      <h3 class="slider__title">
+        Блог
+      </h3>
+      <div class="swiper slider__cards-container cards" id="blog-slider">
+        <div class="swiper-wrapper cards__wrapper ">
+          <div class="swiper-slide cards__item-wrapper">
+            <a href="" target="_blank" class="cards__item card">
+              <img src="<%=require('./assets/images/blog-img-01.png')%>" alt="" class="card__img">
+              <div class="card__category-wrapper">
+                <span class="card__date">
+                  28.12.2024
+                </span>
+                <span class="card__category">
+                  Новости
+                </span>
+                <span class="card__category">
+                  SM Young
+                </span>
+
+              </div>
+              <div class="card__description">
+                <h4 class="card__name">
+                  «Сложность в желании все на&nbsp;свете оцифровать»
+                </h4>
+                <span class="card__lable">
+                  В День маркетолога читаем жизненные ответы коллег на&nbsp;вопрос о&nbsp;сложностях в работе
+                </span>
+              </div>
+            </a>
+
+          </div>
+          <div class="swiper-slide cards__item-wrapper">           
+
+            <a href="" target="_blank" class="cards__item card">
+              <img src="<%=require('./assets/images/blog-img-02.png')%>" alt="" class="card__img">
+              <div class="card__category-wrapper">
+                <span class="card__date">
+                  20.12.2024
+                </span>
+                <span class="card__category">
+                  Блог
+                </span>
+                <span class="card__category">
+                  SM HR Agency
+                </span>
+
+              </div>
+              <div class="card__description">
+                <h4 class="card__name">
+                  Миллениалы и зумеры
+                </h4>
+                <span class="card__lable">
+                  Различия в ценностях и выбор работодателя в&nbsp;креативной индустрии
+                </span>
+              </div>
+            </a>
+
+          </div>
+          <div class="swiper-slide cards__item-wrapper">           
+            <a href="" target="_blank" class="cards__item card">
+              <img src="<%=require('./assets/images/blog-img-03.png')%>" alt="" class="card__img">
+              <div class="card__category-wrapper">
+                <span class="card__date">
+                  04.11.2024
+                </span>
+                <span class="card__category">
+                  Блог
+                </span>
+                <span class="card__category">
+                  SM HR Agency
+                </span>
+
+              </div>
+              <div class="card__description">
+                <h4 class="card__name">
+                  Топ-7 кейсов с&nbsp;использованием нейросети
+                </h4>
+                <span class="card__lable">
+                  Как номинанты XXV сезона используют инновационные технологии
+                </span>
+              </div>
+            </a>
+
+          </div>
+          <div class="swiper-slide cards__item-wrapper">           
+            <a href="" target="_blank" class="cards__item card">
+              <img src="<%=require('./assets/images/blog-img-04.png')%>" alt="" class="card__img">
+              <div class="card__category-wrapper">
+                <span class="card__date">
+                  22.10.2024
+                </span>
+                <span class="card__category">
+                  Новости
+                </span>
+                <span class="card__category">
+                  SM Young
+                </span>
+
+              </div>
+              <div class="card__description">
+                <h4 class="card__name">
+                  Бэкграунд кейса emg
+                </h4>
+                <span class="card__lable">
+                  «Наша задача заключалась в&nbsp;том, чтобы вовлечь врачей в&nbsp;изучение сложного, наукоемкого материала»
+                </span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+        <div class="cards__btns">
+          <button class="cards__btn cards__btn_prev">
+            <img src="<%=require('./assets/images/prev-arrow.png')%>" alt="" class="cards__btn-arrow">
+          </button>
+          <button class="cards__btn cards__btn_next">
+            <img src="<%=require('./assets/images/next-arrow.png')%>" alt="" class="cards__btn-arrow">
+          </button>
+          <a href="" target="_blank" class="cards__link">
+            Смотреть все
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
 
