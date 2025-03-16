@@ -1,0 +1,75 @@
+@use '../variables';
+@use '../mixins';
+
+.module-link {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  max-width: 720px;
+  &__desc {
+    display: inline-block;
+    margin: 0;
+    padding: 1rem 1.2rem 1.4rem;
+    background-color: variables.$base-white;
+    font-size: 1.8rem;
+    line-height: 115%;
+    letter-spacing: -0.05rem;
+    font-weight: 400;
+    margin-top: auto;
+  }
+  &__wrapper {
+    display: flex;
+  }
+  &__link {
+    display: inline-block;
+    height: 38px;
+    // width: 50%;
+    font-size: 1.4rem;
+    line-height: 100%;
+    letter-spacing: variables.$small-letter-spacing;
+    font-weight: 500;
+    padding: 1.1rem 0 1.3rem 1.2rem;
+    position: relative;
+    @include mixins.hover-effect;
+    background-color: variables.$text-color;
+    color: variables.$base-white;
+    &_awards {
+      width: 50%;
+      &--black {
+        &::after {
+          background-image: url(../assets/images/arrow-app.png);
+        }
+      }
+      &--gray {
+        color: variables.$text-color;
+        background-color: variables.$block-color;
+        &::after {
+          background-image: url(../assets/images/arrow-details.png);
+        }        
+      }
+    }
+    &_vote {
+      &::after {
+        background-image: url(../assets/images/arrow-link.png);
+      }
+    }
+    &_tg {
+      &::after {
+        background-image: url(../assets/images/arrow-app.png);
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 1.6rem;
+      height: 1.6rem;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      top: 50%;
+      right: 0;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+}

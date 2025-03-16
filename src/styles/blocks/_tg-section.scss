@@ -1,0 +1,23 @@
+@use '../variables';
+
+.tg-section {
+  width: 100%;
+  min-height: 320px;
+  background: linear-gradient(270deg, #000000 0%, #B5B5B5 12.5%, #FFFFFF 25%, #B5B5B5 37.5%, #000000 50%, #B5B5B5 62.5%, #FFFFFF 75%, #B5B5B5 87.5%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  &__string {
+    overflow: hidden;
+    background-color: variables.$text-color;
+    color: variables.$base-white;
+    padding: 0.55rem 0 1.05rem;
+    font-size: 5.2rem;
+    line-height: 90%;
+    font-weight: 500;
+    letter-spacing: -0.05rem;
+    display: inline-block;
+    width: 100%;
+  }
+}

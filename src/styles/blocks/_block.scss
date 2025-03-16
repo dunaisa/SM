@@ -6,6 +6,10 @@
   cursor: pointer;
   &__top {
     height: 100%;
+    &-img {
+      object-fit: cover;
+      width: 100%;
+    }
     &_align {
       display: flex;
       align-items: center;
@@ -56,6 +60,7 @@
   }
   &_carrot {
     background-color: #FF4E00;
+    cursor: default;
   }
   &_pink {
     background-color: #F973FF;
@@ -65,6 +70,7 @@
   }
   &_purple {
     background-color: #8A64E8;
+    cursor: default;
   }
 }
 
