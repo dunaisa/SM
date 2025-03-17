@@ -1,0 +1,81 @@
+@use '../variables';
+@use '../mixins';
+
+.footer {
+  height: 100vh;
+  background-color: variables.$text-color;
+  padding: 1.2rem 1.2rem 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 5.9rem;
+    flex-shrink: 1;
+    &-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      &-link {
+        color: variables.$base-white;
+        text-decoration: none;
+      }
+    }
+    &-text {
+      font-size: 1.4rem;
+      line-height: 100%;
+      color: variables.$base-white;
+      letter-spacing: variables.$small-letter-spacing;
+      padding: 0;
+      margin: 0 0 1rem;
+      font-weight: 400;
+      &_bold {
+        font-weight: 600;
+      }
+    }
+  }
+  &__social {
+    display: flex;
+    gap: 1.6rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__bottom {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 31px;
+    &-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+    }
+    &-info {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-end;
+      &-links {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        align-items: flex-end;
+
+      }
+      
+    }
+    &-logo {
+      max-width: 114px;
+      margin-bottom: 16px;
+    }
+  }
+  &__chat {
+    margin-bottom: 1.2rem;
+  }
+}
