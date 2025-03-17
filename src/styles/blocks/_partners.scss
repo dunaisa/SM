@@ -36,8 +36,10 @@
     flex-wrap: nowrap;
     gap: 7.2rem;
     margin: 0;
+    width: fit-content;
     padding: 0;
-
+    padding: 0 100% 0 0;
+    // padding: 0 0 0 10%;
   }
   &__img {
     max-height: 98px;
