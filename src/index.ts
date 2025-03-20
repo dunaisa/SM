@@ -67,4 +67,24 @@ import './styles/style.scss';
 // observer.observe(pixelContainer);
 
 
+// АНИМАЦИЯ ХЭДЕРА
+
+let lastScrollTop = 0;
+    const header: HTMLElement | null = document.querySelector('.header');
+    const SCROLL_THRESHOLD = 20;
+
+    window.addEventListener('scroll', function(): void {
+      const scrollTop: number = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollTop === 0) {
+        header?.classList.remove('hidden');
+      } else if (scrollTop > lastScrollTop) {
+        header?.classList.add('hidden');
+      } else if (lastScrollTop - scrollTop > SCROLL_THRESHOLD) {
+        header?.classList.remove('hidden');
+      }   
+
+      lastScrollTop = scrollTop;
+    });
+    
   

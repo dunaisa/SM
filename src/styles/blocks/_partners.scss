@@ -46,8 +46,10 @@
     }
     &_marquee_02 {
       width: fit-content;
-      animation: scroll-02 25s linear infinite;
+      animation: scroll-02 30s linear infinite;
       -webkit-transform-style: preserve-3d;
+      will-change: transform;
+      backface-visibility: hidden;
       padding-right: -100%;
       
       @keyframes scroll-02 {

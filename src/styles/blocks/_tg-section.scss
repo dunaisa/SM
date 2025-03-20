@@ -30,6 +30,8 @@
     &_marquee_01 {
       width: fit-content;
       animation: scroll 20s linear infinite;
+      will-change: transform;
+      backface-visibility: hidden;
       -webkit-transform-style: preserve-3d;
 
       @keyframes scroll {
