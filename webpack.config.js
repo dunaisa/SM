@@ -49,6 +49,10 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
         test: /\.scss$/, // Регулярное выражение для файлов .scss
         use: [
           MiniCssExtractPlugin.loader, // Извлекает CSS в отдельный файл
@@ -62,7 +66,7 @@ module.exports = {
               },
             },
           },
-          { loader: 'sass-loader', options: { sourceMap: true } },       
+          { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
     ]
