@@ -66,41 +66,5 @@ import './styles/style.scss';
 // const pixelContainer = document.getElementById('pixel-container');
 // observer.observe(pixelContainer);
 
-import { gsap } from 'gsap';
 
-// Выбираем элемент с текстом
-const tgString: HTMLElement | null = document.querySelector('.tg-section__string');
-
-// Проверяем, что элемент существует
-if (tgString) {
-  // Создаем анимацию
-  gsap.to(tgString, {
-    x: '-50%', // Перемещаем текст влево на 100% его ширины
-    duration: 10, // Длительность анимации
-    repeat: -1, // Бесконечное повторение
-    ease: 'none', // Линейная анимация без easing
-  });
-} else {
-  console.error('Элемент .tg-section__string не найден');
-}
-
-// Выбираем элемент с текстом
-// const partnersList: HTMLElement | null = document.querySelector('.partners__list');
-
-// // Проверяем, что элемент существует
-// if (partnersList) {
-//   // Создаем анимацию
-//   gsap.fromTo(
-//     partnersList,
-//     { x: '-100%' }, // Начальное положение: текст за пределами видимой области справа
-//     {
-//       x: '100%', // Конечное положение: текст перемещается влево на 100% своей ширины
-//       duration: 20, // Длительность анимации
-//       repeat: -1, // Бесконечное повторение
-//       ease: 'none', // Линейная анимация
-//     }
-//   );
-// } else {
-//   console.error('Элемент .partners__list не найден');
-// }
   

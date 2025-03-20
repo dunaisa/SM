@@ -36,10 +36,29 @@
     flex-wrap: nowrap;
     gap: 7.2rem;
     margin: 0;
-    width: fit-content;
     padding: 0;
-    padding: 0 100% 0 0;
-    // padding: 0 0 0 10%;
+    transform: translateX(-85.2%);
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      
+    }
+    &_marquee_02 {
+      width: fit-content;
+      animation: scroll-02 25s linear infinite;
+      -webkit-transform-style: preserve-3d;
+      padding-right: -100%;
+      
+      @keyframes scroll-02 {
+        0% {
+          transform: translateX(-85.2%);
+        }
+        100% {
+          transform: translateX(calc(-34% - 7.2rem));
+        }
+      }
+    }
   }
   &__img {
     max-height: 98px;

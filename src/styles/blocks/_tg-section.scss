@@ -10,16 +10,37 @@
   align-items: flex-start;
   overflow: hidden;
   &__string {
-    overflow: hidden;
-    background-color: variables.$text-color;
     color: variables.$base-white;
-    padding: 0.55rem 0 1.05rem;
     font-size: 5.2rem;
     line-height: 90%;
     font-weight: 500;
     letter-spacing: -0.05rem;
-    display: inline-block;
+    display: flex;
     white-space: nowrap;
     box-sizing: border-box;
+    min-width: 100%;
+    gap: 1rem;
+    padding: 0.55rem 0 1.05rem;
+
+    &-wrapper {
+      background-color: variables.$text-color;
+      display: flex;
+      align-items: center;
+    }
+    &_marquee_01 {
+      width: fit-content;
+      animation: scroll 20s linear infinite;
+      -webkit-transform-style: preserve-3d;
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-50% - 1rem));
+        }
+      }
+    }
+
   }
 }
