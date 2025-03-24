@@ -69,10 +69,10 @@ gsap.registerPlugin();
 document.addEventListener('DOMContentLoaded', () => {
   const trialContainer = document.querySelector('.promo__img-container');
   let imageIndex = 0;
-  let animTimeOut = null;
+  let animTimeOut : number | null = null;
   let isAnim = false;
 
-  function addNewImg(x, y) {
+  function addNewImg(x : number, y : number) {
     const newItem = document.createElement('div');
     newItem.className = 'promo__img';
     newItem.style.left = `${x - 75}px`;
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     img.src = `./assets/images/trial/img-${imageIndex}.png`
     newItem.appendChild(img)
     imageIndex += imageIndex + 1
-    trialContainer.appendChild(img)
+    trialContainer?.appendChild(img)
   }
 
   function changeFirstImg() {
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
       duration: 0.5,
       stagger: 0.025,
       onComplete: function() {
-        this.targets().forEarch((item) => {
+        this.targets().forEarch((item : HTMLElement) => {
           if (item.parentNode) {
             item.parentNode.removeChild(item)
           }
