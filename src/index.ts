@@ -60,6 +60,68 @@ document.addEventListener('DOMContentLoaded', () => {
   
 });
 
+// // // // // // // // // // // // // // // // 
+
+// TRIAL PROMO IMG
+
+gsap.registerPlugin();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const trialContainer = document.querySelector('.promo__img-container');
+  let imageIndex = 0;
+  let animTimeOut = null;
+  let isAnim = false;
+
+  function addNewImg(x, y) {
+    const newItem = document.createElement('div');
+    newItem.className = 'promo__img';
+    newItem.style.left = `${x - 75}px`;
+    newItem.style.top = `${y - 100}px`;
+
+    const img = document.createElement('img');
+    img.src = `./assets/images/trial/img-${imageIndex}.png`
+    newItem.appendChild(img)
+    imageIndex += imageIndex + 1
+    trialContainer.appendChild(img)
+  }
+
+  function changeFirstImg() {
+    while (trialContainer.children.length > 5) {
+      trialContainer?.removeChild(trialContainer.firstChild)
+    }
+
+  }
+
+  function startAnimation() {
+    if (isAnim || trialContainer.children.length === 0) return
+    isAnim = true
+
+    gsap.to('.promo__img', {
+      y: 1000,
+      scale: 0.5,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.025,
+      onComplete: function() {
+        this.targets().forEarch((item) => {
+          if (item.parentNode) {
+            item.parentNode.removeChild(item)
+          }
+        });
+
+        isAnim= false
+
+      }
+    })
+  }
+
+  trialContainer?.addEventListener('mousemove', function(event) {
+    clearTimeout(animTimeOut)
+  })
+
+})
+
+
 
 
 // // // // // // // // // // // // // // // // 
