@@ -73,6 +73,7 @@
         <h1 class="promo__title">
           Экосистема креативных коммуникаций
         </h1>
+        <!-- <canvas class="promo__title-canvas"></canvas> -->
         <div class="promo__description">
           <span class="promo__dec-icon">\\\</span>
           <p class="promo__subtitle">
@@ -118,8 +119,15 @@
 
       </div>
       <div class="awards__right">
-        <div class="awards__right-wrapper">
-          <div class="awards__right-text-wrapper">
+        <div class="awards__right-wrapper img-container">
+
+          <canvas class="pixel-animation" data-image-type="awards"></canvas>
+
+        </div>
+      </div>
+
+
+          <!-- <div class="awards__right-text-wrapper">
             <span class="awards__right-text">
               ¢r€aŧivĕ
             </span>
@@ -130,9 +138,7 @@
               ãw@ŕđ
             </span>
 
-          </div>
-        </div>
-      </div>
+          </div> -->
 
     </section>
 
@@ -246,8 +252,9 @@
     </section>
 
     <section class="banner">
-      <div class="banner__left">
-        <img src="<%=require('./assets/images/banner.svg')%>" alt="">      
+      <div class="banner__left img-container">
+
+        <canvas class="pixel-animation" data-image-type="banner"></canvas>
           
       </div>
       <div class="banner__right">
@@ -287,8 +294,8 @@
 
     <div class="cards-list cards-list_sheight">
       <a class="cards-list__block block block_pixel">
-        <div class="block__top block__top_align">
-          <img src="<%=require('./assets/images/retrograde.svg')%>" alt="">
+        <div class="block__top block__top_align img-container">
+          <canvas class="pixel-animation" data-image-type="retrograde"></canvas>
             
         </div>
         <div class="block__bottom">
@@ -303,8 +310,12 @@
 
       </a>
       <a class="cards-list__block block block_yellow">
-        <div class="block__top block__top_align">
-          <img src="<%=require('./assets/images/vote.svg')%>" alt="">
+        <div class="block__top block__top_align img-container">
+          <!-- <img src="<%=require('./assets/images/vote.svg')%>" alt=""> -->
+
+          <canvas class="pixel-animation" data-image-type="vote"></canvas>
+
+
           
         </div>
         <div class="block__bottom">
@@ -339,7 +350,10 @@
       <a class="cards-list__block block block_gray">
         <div class="block__top">
           <h2 class="block__top-title anim-text">
-            SM HR<br> Agency
+            SM HR
+          </h2>
+          <h2 class="block__top-title anim-text">
+            Agency
           </h2>
         </div>
         <div class="block__bottom">
@@ -349,9 +363,8 @@
         </div>
       </a>
       <div class="cards-list__block block block_carrot">
-        <div class="block__top block__top_align">
-          <img src="<%=require('./assets/images/agency.svg')%>" alt="">
-          
+        <div class="block__top block__top_align img-container">
+          <canvas class="pixel-animation" data-image-type="agency"></canvas>          
 
         </div>
         <div class="block__bottom">
@@ -379,8 +392,9 @@
 
     <div class="cards-list cards-list_sheight">
       <a class="cards-list__block block block_pink">
-        <div class="block__top block__top_align">
-          <img src="<%=require('./assets/images/young.svg')%>" alt="">
+        <div class="block__top block__top_align img-container">
+          <canvas class="pixel-animation" data-image-type="young"></canvas>  
+
         </div>
         <div class="block__bottom">
           <h2 class="block__bottom-title anim-text">
@@ -394,8 +408,8 @@
 
       </a>
       <a class="cards-list__block block block_blue">
-        <div class="block__top block__top_align">
-          <img src="<%=require('./assets/images/regions.svg')%>" alt="">
+        <div class="block__top block__top_align img-container">
+          <canvas class="pixel-animation" data-image-type="regions"></canvas> 
 
         </div>
         <div class="block__bottom">
@@ -430,7 +444,10 @@
       <a class="cards-list__block block block_gray">
         <div class="block__top">
           <h2 class="block__top-title anim-text">
-            SM<br> Conference
+            SM
+          </h2>
+          <h2 class="block__top-title anim-text">
+            Conference
           </h2>
         </div>
         <div class="block__bottom">
@@ -440,8 +457,8 @@
         </div>
       </a>
       <div class="cards-list__block block block_purple">
-        <div class="block__top block__top_align">
-          <img src="<%=require('./assets/images/conf.svg')%>" alt="" >         
+        <div class="block__top block__top_align img-container">
+          <canvas class="pixel-animation" data-image-type="conf"></canvas>      
 
         </div>
 
@@ -582,7 +599,10 @@
       <a class="cards-list__block block block_gray">
         <div class="block__top">
           <h2 class="block__top-title anim-text">
-            О Silver Mercury
+            О Silver
+          </h2>
+          <h2 class="block__top-title anim-text">
+            Mercury
           </h2>
         </div>
         <div class="block__bottom">
@@ -592,8 +612,9 @@
         </div>
       </a>
       <div class="cards-list__block block block_carrot ">
-        <div class="block__top block__top_align">
-          <img src="<%=require('./assets/images/about.jpg')%>" alt="" class="block__top-img">         
+        <div class="block__top block__top_align img-container">
+
+          <canvas class="pixel-animation" data-image-type="about"></canvas>        
 
         </div>
 
