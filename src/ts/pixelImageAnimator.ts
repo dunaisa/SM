@@ -1,4 +1,4 @@
-class PixelImageAnimator {
+export class PixelImageAnimator {
   private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
   private img: HTMLImageElement;
@@ -11,24 +11,32 @@ class PixelImageAnimator {
   private animationId: number | null;
   private startTime: number | null;
   private hasAnimated: boolean;
-  private imageData: ImageData; // Добавляем свойство imageData
+  private imageData: ImageData;
 
-  constructor(canvasElement: HTMLCanvasElement, imageSrc: string, options: Partial<typeof this.options> = {}) {
+  private defaultOptions = {
+    initialPixelSize: 200,
+    finalPixelSize: 10,
+    animationDuration: 2000
+  };
+
+  constructor(
+    canvasElement: HTMLCanvasElement,
+    imageSrc: string,
+    options: Partial<typeof PixelImageAnimator.prototype.defaultOptions> = {}
+  ) {
     this.canvas = canvasElement;
     this.ctx = this.canvas.getContext('2d')!;
     this.img = new Image();
     this.img.src = imageSrc;
     this.dpr = window.devicePixelRatio || 1;
     this.options = {
-      initialPixelSize: 200,
-      finalPixelSize: 10,
-      animationDuration: 2000,
+      ...this.defaultOptions,
       ...options,
     };
     this.animationId = null;
     this.startTime = null;
     this.hasAnimated = false;
-    this.imageData = new ImageData(1, 1); // Инициализируем imageData
+    this.imageData = new ImageData(1, 1);
   }
 
   setupCanvas(): void {
@@ -103,6 +111,7 @@ class PixelImageAnimator {
 
   init(): void {
     this.img.onload = () => {
+      
       this.setupCanvas();
 
       const tempCanvas = document.createElement('canvas');
