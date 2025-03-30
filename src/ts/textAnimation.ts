@@ -44,20 +44,20 @@ async function animateText(element: HTMLElement, speed = 100): Promise<void> {
 export function initTextAnimations(): void {
   const animatedTexts = document.querySelectorAll<HTMLElement>('.anim-text');
 
-  function isElementInViewport(el: HTMLElement): boolean {
-    const rect = el.getBoundingClientRect();
-    return rect.top <= window.innerHeight && rect.bottom >= 0;
-  }
-
-  function handleScroll(): void {
-    animatedTexts.forEach((text) => {
-      if (!text.dataset.animated && isElementInViewport(text)) {
-        text.dataset.animated = 'true';
-        animateText(text, 80);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const text = entry.target as HTMLElement;
+        if (!text.dataset.animated) {
+          text.dataset.animated = 'true';
+          animateText(text, 80);
+        }
       }
     });
-  }
+  }, {
+    threshold: 0.3,
+    rootMargin: '0px 0px 0px 0px'
+  });
 
-  handleScroll();
-  window.addEventListener('scroll', handleScroll);
+  animatedTexts.forEach(text => observer.observe(text));
 }

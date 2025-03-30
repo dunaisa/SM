@@ -19,6 +19,9 @@ export class PixelImageAnimator {
     animationDuration: 2000
   };
 
+  private isInViewport: boolean = false;
+  private observer: IntersectionObserver | null = null;
+
   constructor(
     canvasElement: HTMLCanvasElement,
     imageSrc: string,
@@ -109,6 +112,26 @@ export class PixelImageAnimator {
     }
   }
 
+  private checkVisibility(): void {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        this.isInViewport = entry.isIntersecting;
+        if (this.isInViewport && !this.hasAnimated) {
+          this.startAnimation();
+          this.observer?.disconnect();
+        }
+      });
+    }, options);
+
+    this.observer.observe(this.canvas);
+  }
+
   init(): void {
     this.img.onload = () => {
       
@@ -121,6 +144,8 @@ export class PixelImageAnimator {
 
       tempCtx.drawImage(this.img, 0, 0, this.canvas.width, this.canvas.height);
       this.imageData = tempCtx.getImageData(0, 0, this.canvas.width, this.canvas.height);
+
+      this.checkVisibility();
     };
 
     this.img.onerror = () => {
@@ -138,5 +163,6 @@ export class PixelImageAnimator {
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
     }
+    this.observer?.disconnect();
   }
 }

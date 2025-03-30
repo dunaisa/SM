@@ -1,45 +1,111 @@
-import gsap from 'gsap';
+export interface ImageConfig {
+  src: string;
+  width?: string;
+  height?: string;
+}
 
-export function initTrialPromoAnimation(): void {
-  const trialContainer = document.querySelector<HTMLElement>('.promo__img-container');
-  if (!trialContainer) return;
+export function initTrialPromoAnimation(container: HTMLElement, images: ImageConfig[]) {
+  const mouseArea = document.createElement('div');
+  mouseArea.className = 'mouse-area';
+  container.appendChild(mouseArea);
 
-  let imageIndex = 0;
-  let animTimeout: number | null = null;
-  let isAnimating = false;
+  const imgElements = images.map((config) => {
+    const img = new Image();
+    img.src = config.src;
+    img.className = 'floating-img';
 
-  function addNewImg(x: number, y: number): void {
-    const newItem = document.createElement('div');
-    newItem.className = 'promo__img';
-    newItem.style.left = `${x - 75}px`;
-    newItem.style.top = `${y - 100}px`;
+    img.style.width = `${config.width}%` || '5%';
+    img.style.height = `${config.height}%` || '5%';
 
-    const img = document.createElement('img');
-    img.src = `./assets/images/trial/img-${imageIndex}.png`;
-    newItem.appendChild(img);
+    img.style.position = 'absolute';
+    img.style.transform = 'translate(-50%, -50%)';
+    img.style.display = 'none';
 
-    trialContainer.appendChild(newItem);
-    imageIndex++;
-  }
+    container.appendChild(img);
+    return img;
+  });
 
-  function startAnimation(): void {
-    if (isAnimating || !trialContainer.children.length) return;
-    isAnimating = true;
+  let activeImages: HTMLImageElement[] = [];
+  let nextImageIndex = 0;
+  let zIndexCounter = 1;
+  let mouseStoppedTimer: number | null = null;
+  const MOUSE_STOP_DELAY = 200;
 
-    gsap.to('.promo__img', {
-      y: 1000,
-      scale: 0.5,
-      opacity: 0,
-      duration: 0.5,
-      stagger: 0.025,
-      onComplete: () => {
-        Array.from(trialContainer.children).forEach((item) => item.remove());
-        isAnimating = false;
-      },
+  function isPositionValid(x: number, y: number): boolean {
+    if (activeImages.length === 0) return true;
+
+    const containerRect = container.getBoundingClientRect();
+    const containerWidth = containerRect.width;
+
+    return !activeImages.some((img) => {
+      const imgRect = img.getBoundingClientRect();
+
+      const minDistance = containerWidth * 0.05;
+
+      const dx = imgRect.left + imgRect.width / 2 - x;
+      const dy = imgRect.top + imgRect.height / 2 - y;
+      return Math.sqrt(dx * dx + dy * dy) < minDistance;
     });
   }
 
-  trialContainer.addEventListener('mousemove', (event: MouseEvent) => {
-    clearTimeout(animTimeout!);
+  mouseArea.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    if (mouseStoppedTimer) {
+      clearTimeout(mouseStoppedTimer);
+      mouseStoppedTimer = null;
+    }
+
+    if (isPositionValid(x, y)) {
+      const img = imgElements[nextImageIndex % imgElements.length];
+
+      img.style.zIndex = `${zIndexCounter++}`;
+
+      img.style.left = `${x}px`;
+      img.style.top = `${y}px`;
+      img.style.display = 'block';
+      img.style.opacity = '1';
+
+      if (!activeImages.includes(img)) {
+        activeImages.push(img);
+      }
+
+      nextImageIndex++;
+    }
+
+    mouseStoppedTimer = window.setTimeout(() => {
+      startFallingAnimation();
+    }, MOUSE_STOP_DELAY);
+  });
+
+  function startFallingAnimation() {
+    if (mouseStoppedTimer) {
+      clearTimeout(mouseStoppedTimer);
+      mouseStoppedTimer = null;
+    }
+
+    const containerHeight = container.getBoundingClientRect().height;
+
+    activeImages.forEach((img, index) => {
+      setTimeout(() => {
+        img.style.transition = `top ${0.5 + index * 0.1}s ease-in, opacity ${0.5 + index * 0.1}s ease-out`;
+        img.style.top = `${parseInt(img.style.top) + containerHeight * 0.5}px`;
+        img.style.opacity = '0';
+
+        setTimeout(() => {
+          img.style.display = 'none';
+          img.style.transition = 'none';
+        }, (0.5 + index * 0.1) * 1000);
+      }, index * 50);
+    });
+
+    setTimeout(() => {
+      activeImages = [];
+    }, activeImages.length * 50 + 1500);
+  }
+
+  mouseArea.addEventListener('mouseleave', () => {
+    startFallingAnimation();
   });
 }
