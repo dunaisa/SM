@@ -1,7 +1,7 @@
 export interface ImageConfig {
   src: string;
-  width?: string;
-  height?: string;
+  width?: number;
+  height?: number;
 }
 
 export function initTrialPromoAnimation(container: HTMLElement, images: ImageConfig[]) {
