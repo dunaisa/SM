@@ -4,6 +4,7 @@ import { initSliders } from './ts/slider';
 import { initTrialPromoAnimation } from './ts/trialPromo';
 import { initTextAnimations } from './ts/textAnimation';
 import { PixelImageAnimator } from './ts/pixelImageAnimator';
+import { initScreenAnimator } from './ts/fullScreenAnim';
 
 const awardsImage = require('./assets/images/anim-img/sm-awards-img.png') as string;
 const bannerImage = require('./assets/images/anim-img/banner-img.png') as string;
@@ -15,14 +16,11 @@ const regionsImage = require('./assets/images/anim-img/regions-img.png') as stri
 const confImage = require('./assets/images/anim-img/conf-img.png') as string;
 const aboutImage = require('./assets/images/anim-img/about-img.jpg') as string;
 
-// Импортируем изображения (предполагается, что они находятся в папке assets)
 const image1 = require('./assets/images/trial/img-0.png') as string;
 const image2 = require('./assets/images/trial/img-1.png') as string;
 const image3 = require('./assets/images/trial/img-2.png') as string;
 const image4 = require('./assets/images/trial/img-3.png') as string;
 const image5 = require('./assets/images/trial/img-4.png') as string;
-
-
 
 type ImageMap = {
   awards: string;
@@ -50,15 +48,6 @@ const imageMap: ImageMap = {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Конфигурация изображений
-// const images = [
-//   { src: image1, width: 788, height: 160 },
-//   { src: image2, width: 524, height: 199 },
-//   { src: image3, width: 364, height: 207 },
-//   { src: image4, width: 389, height: 314 },
-//   { src: image5, width: 401, height: 281 }
-// ];
-
 const images = [
   { src: image1, width: 57, height: 23 },
   { src: image2, width: 36, height: 29 },
@@ -68,7 +57,7 @@ const images = [
 ];
 
 const container = document.querySelector<HTMLElement>('.promo__img-container') as HTMLElement;
-
+  initScreenAnimator();
   initHeaderAnimation();
   initSliders();
   initTrialPromoAnimation(container, images);
@@ -85,3 +74,5 @@ const container = document.querySelector<HTMLElement>('.promo__img-container') a
     }
   });
 });
+
+    

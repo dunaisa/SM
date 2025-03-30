@@ -68,3 +68,31 @@ h3 {
   pointer-events: none;
   transition: transform 0.2s ease-out;
 }
+
+.full-screen-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.grid-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+}
+
+.grid-item {
+  background-color: variables.$block-color;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
