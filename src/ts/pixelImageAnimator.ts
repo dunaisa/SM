@@ -40,6 +40,7 @@ export class PixelImageAnimator {
     this.startTime = null;
     this.hasAnimated = false;
     this.imageData = new ImageData(1, 1);
+    this.img.crossOrigin = "anonymous";
   }
 
   setupCanvas(): void {
