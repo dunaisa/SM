@@ -1,0 +1,70 @@
+@use '../variables';
+@use '../mixins';
+
+.cookies {
+  position: fixed;
+  bottom: 12px;
+  right: 14px;
+  z-index: 1000;
+  max-width: 464px;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.8s;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$base-white;
+    position: relative;
+  }
+  &__text {
+    margin: 0;
+    padding: 1.2rem 1.6rem 1.6rem;
+    font-size: 1.8rem;
+    line-height: 115%;
+    color: variables.$text-color;
+    font-weight: 500;
+    letter-spacing: -0.04rem;
+  }
+  &__link {
+    margin: 0;
+    padding: 0;
+    font-size: 1.8rem;
+    line-height: 115%;
+    color: variables.$text-color;
+    font-weight: 500;
+    letter-spacing: -0.04rem;
+    text-decoration: underline;
+    @include mixins.hover-effect;
+  }
+  &__btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    @include mixins.hover-effect;
+    &-close {
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url(../assets/images/close-icon.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+
+    }
+    &-accept {
+      background-color: variables.$block-color;
+      padding: 12px 0;
+      font-size: 1.4rem;
+      line-height: 100%;
+      color: variables.$text-color;
+      font-weight: 500;
+      letter-spacing: -0.04rem;
+    }
+  }
+  &.hidden {
+    opacity: 0;
+  }
+}

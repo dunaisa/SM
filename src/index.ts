@@ -5,6 +5,7 @@ import { initTrialPromoAnimation } from './ts/trialPromo';
 import { initTextAnimations } from './ts/textAnimation';
 import { PixelImageAnimator } from './ts/pixelImageAnimator';
 import { initScreenAnimator } from './ts/fullScreenAnim';
+import { initCookies } from './ts/cookies';
 
 const awardsImage = require('./assets/images/anim-img/sm-awards-img.png') as string;
 const bannerImage = require('./assets/images/anim-img/banner-img.png') as string;
@@ -57,6 +58,7 @@ const images = [
 ];
 
 const container = document.querySelector<HTMLElement>('.promo__img-container') as HTMLElement;
+  initCookies()
   initScreenAnimator();
   initHeaderAnimation();
   initSliders();

@@ -6,11 +6,11 @@
   flex-direction: column;
   margin-top: auto;
   max-width: 720px;
+  background-color: variables.$base-white;
   &__desc {
     display: inline-block;
     margin: 0;
     padding: 1rem 1.2rem 1.4rem;
-    background-color: variables.$base-white;
     font-size: 1.8rem;
     line-height: 115%;
     letter-spacing: -0.05rem;
@@ -23,7 +23,6 @@
   &__link {
     display: inline-block;
     height: 38px;
-    // width: 50%;
     font-size: 1.4rem;
     line-height: 100%;
     letter-spacing: variables.$small-letter-spacing;
